@@ -1,6 +1,6 @@
+import './styles/css/App.css';
 import React from 'react';
 import Main from './components/Main';
-import './styles/css/App.css';
 
 
 const App = () =>

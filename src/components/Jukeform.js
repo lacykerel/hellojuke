@@ -14,6 +14,7 @@ class JukeForm extends Component {
     this.state = {
       items: [],
       loading: true,
+      isLoggedIn: false,
       token: '',
       searchText: ''
     };
@@ -35,15 +36,20 @@ class JukeForm extends Component {
     axios.get(`https://api.spotify.com/v1/search?q=${query}&type=album,artist,playlist,track`, {
       headers: { 'Authorization': `Bearer ${accessToken}`}
     }).then(response => {
-      console.log(response, 'response');
       if(response.status === 200) {
         this.setState({
           items: response.data.artists.items,
-          loading: false
+          loading: false,
+          isLoggedIn: true
         });
       }
     }).catch(error => {
-      console.log(error, 'error');
+      console.log(error.response, 'error');
+      if(error.response.status === 401) {
+        this.setState({
+          isLoggedIn: false
+        });
+      }
     });
   }
 

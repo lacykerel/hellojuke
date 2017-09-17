@@ -2,7 +2,7 @@ import React from 'react';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { routerReducer } from 'react-router-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import JukeForm from './Jukeform';
 import Login from './Login';
 import reducers from '../reducers';
@@ -24,5 +24,6 @@ const Main = () => (
   </Provider>
   </main>
 )
+
 
 export default Main;

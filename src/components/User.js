@@ -15,7 +15,6 @@ class User extends Component {
     // params injected via react-router, dispatch injected via connect
     const {dispatch, params} = this.props;
     const {accessToken, refreshToken} = params;
-    console.log(accessToken, 'accessToken');
     dispatch(setTokens({accessToken, refreshToken}));
     dispatch(getMyInfo());
   }

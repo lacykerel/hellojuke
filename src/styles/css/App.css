@@ -28,11 +28,16 @@ html, body, .spotify-login {
   font-size: 3em;
   height: 150px;
   padding: 20px;
-  color: #222; }
+  color: #222;
+  margin-bottom: 20px; }
+
+.jukeForm {
+  display: flex;
+  margin-bottom: 40px; }
 
 .jukeForm input {
   padding: 15px;
-  width: 70%;
+  width: 80%;
   font-size: 24px;
   font-weight: bold;
   float: left;
@@ -63,5 +68,35 @@ html, body, .spotify-login {
   margin: 50px auto;
   text-align: center;
   width: 50%; }
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  width: 100%;
+  padding: 0; }
+  .table-row .table-row-item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    vertical-align: top;
+    text-align: left;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 20px; }
+    .table-row .table-row-item:first-child {
+      width: 35%; }
+    .table-row .table-row-item:nth-child(2) {
+      width: 24%; }
+
+.table-header {
+  padding: 0; }
+  .table-header .table-row-item {
+    flex-grow: 1;
+    text-align: left;
+    text-transform: uppercase; }
+    .table-header .table-row-item:first-child {
+      width: 30%; }
+    .table-header .table-row-item:nth-child(2) {
+      width: 30%; }
 
 /*# sourceMappingURL=App.css.map */
