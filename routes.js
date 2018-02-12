@@ -1,19 +1,21 @@
 const Spotify = require('spotify-web-api-node');
 const express = require('express');
 const router = new express.Router();
+const config = require('./config');
 
 // configure the express server
 const CLIENT_ID = process.env.client_id;
 const CLIENT_SECRET = process.env.client_secret;
 const REDIRECT_URI = process.env.redirect_uri || 'http://localhost:3000/callback';
 const STATE_KEY = 'spotify_auth_state';
+const spotifyConfig = './config/keys';
 // your application requests authorization
 const scopes = ['user-read-private', 'user-read-email'];
 
 // configure spotify
 const spotifyApi = new Spotify({
-  clientId: 'bd64a794965a46d388fdd5ee575537a7',
-  clientSecret: '311520af782d428286788d1b033d071a',
+  clientId: config.clientID,
+  clientSecret: config.clientSecret,
   redirectUri: 'http://localhost:3000/callback'
 });
 

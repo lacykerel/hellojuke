@@ -6,3 +6,4 @@ npm-debug.log*
 node_modules
 .sass-cache
 public/bundle.js
+config.js
