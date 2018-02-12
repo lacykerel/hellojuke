@@ -6,7 +6,7 @@ class Login extends Component {
   render() {
     return (
       <div className="login">
-        <a href="/login"><img alt="" src={spotify}/></a>
+        <a href="/login" dangerouslySetInnerHTML={{__html: spotify}}></a>
       </div>
     )
   }

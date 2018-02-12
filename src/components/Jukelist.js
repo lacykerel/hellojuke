@@ -6,7 +6,12 @@ const Jukelist = props => {
   let items;
 
     if (results.length) {
-      items = results.map(item => <Item name={item.name} key={item.id} />);
+      items = results.map(item => <Item
+        trackname={item.name}
+        artist={item.artists[0].name}
+        album={item.album.name}
+        key={item.id} />
+      );
     } else {
       // items = <NoItems />
     }

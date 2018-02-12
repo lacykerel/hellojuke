@@ -3,7 +3,7 @@ import { connect }  from 'react-redux';
 import {
   getMyInfo,
   setTokens,
-}   from '../actions/actions';
+}   from '../actions';
 
 /**
  * Our user page

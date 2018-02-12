@@ -1,25 +1,11 @@
 import {
-  SPOTIFY_TOKENS, SPOTIFY_ME_BEGIN, SPOTIFY_ME_SUCCESS, SPOTIFY_ME_FAILURE
-} from '../actions/actions';
+  SPOTIFY_TOKENS, SPOTIFY_ME_BEGIN, SPOTIFY_ME_SUCCESS, SPOTIFY_ME_FAILURE, GET_RESULTS
+} from '../actions';
 
 /** The initial state; no tokens and no user info */
 const initialState = {
   accessToken: null,
   refreshToken: null,
-  user: {
-    loading: false,
-    country: null,
-    display_name: null,
-    email: null,
-    external_urls: {},
-    followers: {},
-    href: null,
-    id: null,
-    images: [],
-    product: null,
-    type: null,
-    uri: null,
-  }
 };
 
 /**
@@ -27,6 +13,10 @@ const initialState = {
  */
 export default function reduce(state = initialState, action) {
   switch (action.type) {
+
+  case GET_RESULTS:
+    return [ action.payload.data, ...state ];
+
   // when we get the tokens... set the tokens!
   case SPOTIFY_TOKENS:
     const {accessToken, refreshToken} = action;
